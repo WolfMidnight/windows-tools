@@ -507,48 +507,48 @@ function New-ThreatReport {
             <tr><th>Component</th><th>Status</th><th>Details</th></tr>
             <tr>
                 <td>Windows Defender</td>
-                <td>$(if($UseDefender){'<span class="badge badge-success">✓ Executed</span>'}else{'<span class="badge badge-info">Skipped</span>'})</td>
-                <td>$(if($UseDefender){'Full system scan initiated'}else{'Not requested'})</td>
+                <td>$(if($UseDefender){"<span class='badge badge-success'>✓ Executed</span>"}else{"<span class='badge badge-info'>Skipped</span>"})</td>
+                <td>$(if($UseDefender){"Full system scan initiated"}else{"Not requested"})</td>
             </tr>
             <tr>
                 <td>System Integrity</td>
-                <td>$(if($RepairSystem){'<span class="badge badge-success">✓ Checked</span>'}else{'<span class="badge badge-info">Skipped</span>'})</td>
-                <td>$(if($RepairSystem){'SFC and DISM verification completed'}else{'Not requested'})</td>
+                <td>$(if($RepairSystem){"<span class='badge badge-success'>✓ Checked</span>"}else{"<span class='badge badge-info'>Skipped</span>"})</td>
+                <td>$(if($RepairSystem){"SFC and DISM verification completed"}else{"Not requested"})</td>
             </tr>
             <tr>
                 <td>Debloating</td>
-                <td>$(if($Debloat){'<span class="badge badge-success">✓ Completed</span>'}else{'<span class="badge badge-info">Skipped</span>'})</td>
-                <td>$(if($Debloat){"Removed $($suspiciousItems.RemovedBloatware.Count) applications"}else{'Not requested'})</td>
+                <td>$(if($Debloat){"<span class='badge badge-success'>✓ Completed</span>"}else{"<span class='badge badge-info'>Skipped</span>"})</td>
+                <td>$(if($Debloat){"Removed $($suspiciousItems.RemovedBloatware.Count) applications"}else{"Not requested"})</td>
             </tr>
             <tr>
                 <td>Temp Cleanup</td>
-                <td>$(if($CleanTemp){'<span class="badge badge-success">✓ Completed</span>'}else{'<span class="badge badge-info">Skipped</span>'})</td>
-                <td>$(if($CleanTemp){"Freed $($suspiciousItems.CleanedTempFiles.TotalFreedMB) MB"}else{'Not requested'})</td>
+                <td>$(if($CleanTemp){"<span class='badge badge-success'>✓ Completed</span>"}else{"<span class='badge badge-info'>Skipped</span>"})</td>
+                <td>$(if($CleanTemp){"Freed $($suspiciousItems.CleanedTempFiles.TotalFreedMB) MB"}else{"Not requested"})</td>
             </tr>
             <tr>
                 <td>Windows Updates</td>
-                <td>$(if($UpdateWindows){'<span class="badge badge-success">✓ Checked</span>'}else{'<span class="badge badge-info">Skipped</span>'})</td>
-                <td>$(if($UpdateWindows){'Update check completed'}else{'Not requested'})</td>
+                <td>$(if($UpdateWindows){"<span class='badge badge-success'>✓ Checked</span>"}else{"<span class='badge badge-info'>Skipped</span>"})</td>
+                <td>$(if($UpdateWindows){"Update check completed"}else{"Not requested"})</td>
             </tr>
             <tr>
                 <td>Autoruns</td>
-                <td>$(if($AutorunsEXE -and $IncludeAutoruns){'<span class="badge badge-success">✓ Executed</span>'}else{'<span class="badge badge-warning">Not Available</span>'})</td>
-                <td>$(if($AutorunsEXE -and $IncludeAutoruns){'Startup analysis complete'}else{'Sysinternals tool not found'})</td>
+                <td>$(if($AutorunsEXE -and $IncludeAutoruns){"<span class='badge badge-success'>✓ Executed</span>"}else{"<span class='badge badge-warning'>Not Available</span>"})</td>
+                <td>$(if($AutorunsEXE -and $IncludeAutoruns){"Startup analysis complete"}else{"Sysinternals tool not found"})</td>
             </tr>
             <tr>
                 <td>Memory Analysis</td>
-                <td>$(if($UseMemorySweep){'<span class="badge badge-success">✓ Executed</span>'}else{'<span class="badge badge-info">Skipped</span>'})</td>
-                <td>$(if($UseMemorySweep){'Process hollowing and injection detection'}else{'Not requested'})</td>
+                <td>$(if($UseMemorySweep){"<span class='badge badge-success'>✓ Executed</span>"}else{"<span class='badge badge-info'>Skipped</span>"})</td>
+                <td>$(if($UseMemorySweep){"Process hollowing and injection detection"}else{"Not requested"})</td>
             </tr>
             <tr>
                 <td>Rootkit Scan</td>
-                <td>$(if($UseRootkitScan){'<span class="badge badge-success">✓ Executed</span>'}else{'<span class="badge badge-info">Skipped</span>'})</td>
-                <td>$(if($UseRootkitScan){'Deep rootkit detection completed'}else{'Not requested'})</td>
+                <td>$(if($UseRootkitScan){"<span class='badge badge-success'>✓ Executed</span>"}else{"<span class='badge badge-info'>Skipped</span>"})</td>
+                <td>$(if($UseRootkitScan){"Deep rootkit detection completed"}else{"Not requested"})</td>
             </tr>
             <tr>
                 <td>Third-Party Scanners</td>
-                <td>$(if($UseAdwCleaner -or $UseKVRT -or $UseMSERT){'<span class="badge badge-success">✓ Executed</span>'}else{'<span class="badge badge-info">Skipped</span>'})</td>
-                <td>AdwCleaner: $(if($UseAdwCleaner){'✓'}else{'—'}) | KVRT: $(if($UseKVRT){'✓'}else{'—'}) | MSERT: $(if($UseMSERT){'✓'}else{'—'})</td>
+                <td>$(if($UseAdwCleaner -or $UseKVRT -or $UseMSERT){"<span class='badge badge-success'>✓ Executed</span>"}else{"<span class='badge badge-info'>Skipped</span>"})</td>
+                <td>AdwCleaner: $(if($UseAdwCleaner){"✓"}else{"—"}) | KVRT: $(if($UseKVRT){"✓"}else{"—"}) | MSERT: $(if($UseMSERT){"✓"}else{"—"})</td>
             </tr>
         </table>
         
