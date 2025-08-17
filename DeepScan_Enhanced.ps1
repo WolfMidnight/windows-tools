@@ -518,12 +518,12 @@ function New-ThreatReport {
             <tr>
                 <td>Debloating</td>
                 <td>$(if($Debloat){"<span class='badge badge-success'>✓ Completed</span>"}else{"<span class='badge badge-info'>Skipped</span>"})</td>
-                <td>$(if($Debloat){"Removed $($suspiciousItems.RemovedBloatware.Count) applications"}else{"Not requested"})</td>
+                <td>$(if($Debloat -and $suspiciousItems.RemovedBloatware){"Removed $($suspiciousItems.RemovedBloatware.Count) applications"}else{"Not requested"})</td>
             </tr>
             <tr>
                 <td>Temp Cleanup</td>
                 <td>$(if($CleanTemp){"<span class='badge badge-success'>✓ Completed</span>"}else{"<span class='badge badge-info'>Skipped</span>"})</td>
-                <td>$(if($CleanTemp){"Freed $($suspiciousItems.CleanedTempFiles.TotalFreedMB) MB"}else{"Not requested"})</td>
+                <td>$(if($CleanTemp -and $suspiciousItems.CleanedTempFiles){"Freed $($suspiciousItems.CleanedTempFiles.TotalFreedMB) MB"}else{"Not requested"})</td>
             </tr>
             <tr>
                 <td>Windows Updates</td>
